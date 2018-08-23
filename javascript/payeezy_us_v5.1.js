@@ -1,6 +1,6 @@
 var Payeezy = function() {
     function e(e) {
-        var t = {
+        var PaymentTypes = {
             visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
             mastercard: /^5[1-5][0-9]{14}$/,
             amex: /^3[47][0-9]{13}$/,
@@ -8,9 +8,9 @@ var Payeezy = function() {
             discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
             jcb: /^(?:2131|1800|35\d{3})\d{11}$/
         };
-        for (var n in t) {
-            if (t[n].test(e)) {
-                return n
+        for (var UserPayment in PaymentTypes) {
+            if (PaymentTypes[UserPayment].test(e)) {
+                return UserPayment
             }
         }
     }
